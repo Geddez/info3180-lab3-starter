@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename= "app.css") }}">
+
+
+<h1> Contact Form </h1>
+<form action="{{url_for('contact')}}" method="POST">
+<div>
+ <label for="Name"><h5>{{ form.name.label }}<font color=#BA2C48>(Required)</font></h5>
+ Please enter your full name<br>
+</label>
+<br>
+ {{ form.name() }}
+</div><br><br>
+
+
+<div>
+<label for="mail"><h5>{{ form.email.label }}<font color=#BA2C48>(Required)</font></h5><br>
+Please enter your E-mail address.<br>
+</label>
+<br>
+{{ form.email() }}
+</div><br><br>
+
+ 
+<div>
+<label for="subject"><h5>{{ form.subject.label }}<font color=#BA2C48>(Required)</font></h5><br>
+Please enter the subject for your message.<br>
+</label>
+<br>
+{{ form.subject() }}
+</div><br><br>
+
+
+<div>
+<label for="msg"><h5>{{ form.text.label }}<font color=#BA2C48>(Required)</font></h5><br>
+Please enter the message you would like to send.<br>
+</label>
+<br>
+{{ form.text(cols="40", rows="5") }}
+</div><br><br>
+
+
+
+
+</form>
+<button id= "bttn" type="submit">Send
+</button>
+{% endblock %}
